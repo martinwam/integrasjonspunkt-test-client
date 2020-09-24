@@ -22,10 +22,10 @@ data class IpError(val timestamp: String,
 				   override val message: String,
 				   val path: String) : Throwable()
 
-val url: String = System.getenv("ip-url") ?: "http://localhost:9093"
-val orgnr: String = System.getenv("orgnr") ?: "910076787"
-val retries: Long = System.getenv("retries")?.toLong() ?: 10L
-val timeout: Long = System.getenv("timeout")?.toLong() ?: 30L
+val url: String = System.getProperty("ip-url") ?: "http://localhost:9093"
+val orgnr: String = System.getProperty("orgnr") ?: "910076787"
+val retries: Long = System.getProperty("retries")?.toLong() ?: 10L
+val timeout: Long = System.getProperty("timeout")?.toLong() ?: 30L
 val attachment: String = System.getProperty("attachment") ?: "test.txt"
 
 fun main(args: Array<String>) {
